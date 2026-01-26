@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-16T23:50:00Z",
+    "corpus_size": 50,
+    "gaps_identified": 3
+  },
+  "gaps": [
+    {
+      "gap_id": "GAP-001",
+      "title": "Cost-Quality Pareto Optimization for Multi-Agent Topology Selection",
+      "description": "Existing cost-aware routing (FrugalGPT, RouteLLM, Hybrid LLM, AutoMix) operates at the MODEL level — routing queries between a cheap small model and an expensive large model. No prior work routes between multi-agent TOPOLOGIES (flat, hierarchical, debate) that differ in both cost structure and quality characteristics. The cost dimension of topology selection is unaddressed: practitioners must choose topologies blind to their cost-quality Pareto frontier.",
+      "evidence": [
+        "FrugalGPT, RouteLLM, Hybrid LLM all route between model tiers, not orchestration topologies",
+        "MetaGPT, ChatDev, AutoGen fix topology at design time without cost-aware selection",
+        "Du et al. show debate improves quality but do not analyze when simpler topologies suffice",
+        "DAAO is concurrent work addressing difficulty-aware orchestration but at operator, not topology level",
+        "RouterBench evaluates single-agent model routing; no multi-agent topology routing benchmark exists"
+      ],
+      "novelty_score": 0.92,
+      "feasibility": {
+        "score": 0.88,
+        "reason": "Task characterization (DIT) already validated in Paper 1; cost models derivable from token counts; Pareto optimization is well-understood"
+      },
+      "confidence": "HIGH",
+      "recommended_framing": "A Pareto-aware contextual bandit that uses DIT task features to select the cheapest multi-agent topology meeting a configurable quality threshold, reducing orchestration cost by 40-60% while retaining 95%+ of peak quality.",
+      "key_references": ["chen2023frugalgpt", "ong2024routellm", "ding2024hybrid", "aggarwal2024automix", "du2023debate", "hong2023metagpt"]
+    },
+    {
+      "gap_id": "GAP-002",
+      "title": "Task-Aware Cost Amortization in Multi-Agent Workflows",
+      "description": "Cost amortization strategies (tool creation in LATM, skill libraries in Voyager) are studied for single-agent systems but not for multi-agent topology decisions. When a task batch shares properties, the topology selection cost could be amortized.",
+      "evidence": [
+        "LATM amortizes tool-making cost but only in two-tier model setting",
+        "No work studies batch-level topology selection amortization"
+      ],
+      "novelty_score": 0.78,
+      "feasibility": {
+        "score": 0.65,
+        "reason": "Requires batch task assumptions that may not hold in production"
+      },
+      "confidence": "MEDIUM",
+      "recommended_framing": "Batch-aware topology selection that amortizes routing overhead across similar tasks.",
+      "key_references": ["cai2023latm", "wang2023voyager"]
+    },
+    {
+      "gap_id": "GAP-003",
+      "title": "Topology-Aware Training of Routing Models",
+      "description": "Cascade-aware training optimizes small models for their cascade position, but no work trains routers aware of multi-agent topology characteristics.",
+      "evidence": [
+        "Cascade-Aware Training exists for sequential cascades only",
+        "No topology-aware router training methodology"
+      ],
+      "novelty_score": 0.75,
+      "feasibility": {
+        "score": 0.55,
+        "reason": "Requires large-scale topology execution data for training"
+      },
+      "confidence": "MEDIUM",
+      "recommended_framing": "Fine-tuned routing models trained on topology execution traces.",
+      "key_references": ["wang2024cascade_aware", "dekoninck2024unified"]
+    }
+  ]
+}
