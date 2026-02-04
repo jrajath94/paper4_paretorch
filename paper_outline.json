@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "paper_title": "ParetOrch: Cost-Quality Pareto Optimization for Multi-Agent Topology Selection",
+    "paper_type": "empirical",
+    "venue": "NeurIPS 2026",
+    "page_limit": 9,
+    "generated_at": "2026-03-16T23:55:00Z",
+    "outline_strategy": "problem-method-evidence"
+  },
+  "abstract": {
+    "word_count_target": 200,
+    "note": "Written last after all sections complete"
+  },
+  "sections": [
+    {
+      "section_id": "introduction",
+      "title": "Introduction",
+      "word_count_target": 800,
+      "citation_density": "5-8",
+      "figure_slots": 1,
+      "argumentation_notes": "Open with the cost problem: practitioners deploy multi-agent topologies without cost awareness. State the gap: existing routing works at model level, not topology level. Introduce ParetOrch and DIT-based routing. Preview main result: 53% cost reduction at 95.6% quality retention. End with contributions list.",
+      "narrative_role": "problem_statement",
+      "key_terminology": ["orchestration topology", "DIT features", "Pareto frontier", "quality threshold"],
+      "subsections": [
+        "Problem: Topology selection ignores cost",
+        "Gap: Model-level routing vs topology-level routing",
+        "Contribution: ParetOrch framework",
+        "Results preview"
+      ]
+    },
+    {
+      "section_id": "related_work",
+      "title": "Related Work",
+      "word_count_target": 1000,
+      "citation_density": "15-25",
+      "figure_slots": 0,
+      "argumentation_notes": "Organize by three research threads: (1) Cost-aware LLM routing (FrugalGPT, RouteLLM, Hybrid LLM, AutoMix, EcoAssistant) — model-level; (2) Multi-agent orchestration (MetaGPT, ChatDev, AutoGen, debate) — topology-fixed; (3) Pareto/multi-objective optimization in ML. End each thread by identifying what is missing that ParetOrch addresses.",
+      "narrative_role": "gap_positioning",
+      "key_terminology": ["LLM cascade", "model routing", "topology routing", "Pareto optimality"],
+      "subsections": [
+        "Cost-Aware LLM Routing and Cascading",
+        "Multi-Agent Orchestration Topologies",
+        "Multi-Objective and Pareto Optimization"
+      ]
+    },
+    {
+      "section_id": "method",
+      "title": "ParetOrch: Pareto-Optimal Topology Routing",
+      "word_count_target": 1500,
+      "citation_density": "3-5",
+      "figure_slots": 1,
+      "argumentation_notes": "Three components: (1) Topology cost model — derive token cost per topology per difficulty from execution traces; (2) DIT-conditioned quality predictor — predict success probability per topology given DIT features; (3) Pareto-aware selection — given quality threshold tau, select cheapest topology whose predicted success >= tau. Formalize as constrained optimization. Include algorithm box.",
+      "narrative_role": "method_presentation",
+      "key_terminology": ["cost model", "quality predictor", "Pareto-aware selection", "quality threshold tau", "DIT magnitude"],
+      "subsections": [
+        "Problem Formulation",
+        "Topology Cost Models",
+        "DIT-Conditioned Quality Prediction",
+        "Pareto-Aware Topology Selection",
+        "Algorithm Summary"
+      ]
+    },
+    {
+      "section_id": "experiments",
+      "title": "Experimental Setup",
+      "word_count_target": 800,
+      "citation_density": "2-4",
+      "figure_slots": 0,
+      "argumentation_notes": "Task suite: 84 tasks across 4 difficulty tiers with DIT annotations. Topologies: flat (single-agent), hierarchical (coordinator + specialists), debate (multi-agent argumentation). Seeds: 3 per cell. Baselines: always-flat, always-debate, random, DIT accuracy-only, majority-class. Metrics: total cost, accuracy, cost per correct, quality retention ratio, Pareto area.",
+      "narrative_role": "experimental_design",
+      "key_terminology": ["difficulty tier", "DIT annotation", "quality retention ratio", "cost per correct answer"],
+      "subsections": [
+        "Task Suite and DIT Annotations",
+        "Topology Configurations",
+        "Baselines",
+        "Evaluation Metrics"
+      ]
+    },
+    {
+      "section_id": "results",
+      "title": "Results",
+      "word_count_target": 1200,
+      "citation_density": "2-4",
+      "figure_slots": 3,
+      "argumentation_notes": "Main result: ParetOrch at tau=0.75 achieves 53.3% cost reduction vs always-debate, 48.3% vs DIT accuracy-only, while retaining 95.6% of peak quality. Break down by difficulty tier showing crossover points. Pareto frontier analysis at multiple tau values. Ablation study showing DIT features contribute most (19.3% cost increase without them). Statistical significance with 3-seed CIs.",
+      "narrative_role": "evidence_presentation",
+      "key_terminology": ["cost reduction", "quality retention", "crossover point", "ablation"],
+      "subsections": [
+        "Main Comparison: Cost-Quality Tradeoffs",
+        "Difficulty-Stratified Analysis",
+        "Pareto Frontier Across Quality Thresholds",
+        "Ablation Study",
+        "Statistical Robustness"
+      ]
+    },
+    {
+      "section_id": "discussion",
+      "title": "Discussion",
+      "word_count_target": 800,
+      "citation_density": "5-8",
+      "figure_slots": 0,
+      "argumentation_notes": "Three implications: (1) Most tasks are easy — flat topology is Pareto-optimal for 40-60% of typical workloads; (2) The crossover at DIT ~0.35 gives practitioners a simple rule of thumb; (3) Cost-quality is not zero-sum — the Pareto frontier shows practitioners can navigate the tradeoff smoothly. Limitations: simulated costs (not real API billing), DIT features require task analysis, three topologies only. Future: learned cost models, online adaptation, more topologies.",
+      "narrative_role": "implication",
+      "key_terminology": ["practical implications", "crossover point", "cost-quality tradeoff"],
+      "subsections": [
+        "Practical Implications for Deployment",
+        "The DIT Crossover Insight",
+        "Limitations",
+        "Future Directions"
+      ]
+    },
+    {
+      "section_id": "conclusion",
+      "title": "Conclusion",
+      "word_count_target": 300,
+      "citation_density": "1-3",
+      "figure_slots": 0,
+      "argumentation_notes": "Restate the core contribution: ParetOrch is the first framework to jointly optimize cost and quality in multi-agent topology selection. Key numbers: 53% cost reduction, 95.6% quality retention. The DIT framework enables task-aware routing. Open the door to topology-aware cost optimization as a new research direction.",
+      "narrative_role": "conclusion",
+      "key_terminology": ["ParetOrch", "Pareto-optimal", "DIT routing"],
+      "subsections": []
+    }
+  ],
+  "figure_plan": [
+    {
+      "figure_id": "fig1",
+      "section": "introduction",
+      "type": "conceptual_diagram",
+      "title": "ParetOrch Framework Overview",
+      "description": "Task with DIT features enters router; router selects from flat/hierarchical/debate topologies based on cost-quality Pareto frontier; output shows cost savings path.",
+      "data_source": "conceptual"
+    },
+    {
+      "figure_id": "fig2",
+      "section": "method",
+      "type": "cost_model_visualization",
+      "title": "Topology Cost Models by Difficulty Tier",
+      "description": "Bar chart showing token cost per task for flat, hierarchical, debate across trivial/easy/medium/hard tiers.",
+      "data_source": "paper/experiments/pareto_results.json:topology_cost_models"
+    },
+    {
+      "figure_id": "fig3",
+      "section": "results",
+      "type": "pareto_frontier",
+      "title": "Cost-Quality Pareto Frontier",
+      "description": "Scatter plot of all routing policies on cost (x) vs accuracy (y) axes, with Pareto frontier curve through ParetOrch at different tau values.",
+      "data_source": "paper/experiments/pareto_results.json:routing_policies,pareto_frontier_analysis"
+    },
+    {
+      "figure_id": "fig4",
+      "section": "results",
+      "type": "crossover_analysis",
+      "title": "DIT Crossover: Where Topology Upgrade Pays Off",
+      "description": "Line plot showing accuracy gap between topologies as function of DIT magnitude, with crossover points annotated.",
+      "data_source": "paper/experiments/pareto_results.json:topology_accuracy_by_difficulty,key_observations"
+    },
+    {
+      "figure_id": "fig5",
+      "section": "results",
+      "type": "ablation_bar_chart",
+      "title": "Ablation Study: Component Contributions",
+      "description": "Grouped bar chart showing cost and accuracy for full ParetOrch vs each ablation variant.",
+      "data_source": "paper/experiments/pareto_results.json:ablation_study"
+    }
+  ],
+  "integration_plan": {
+    "terminology": {
+      "topology": "orchestration topology (not architecture, not framework)",
+      "flat": "single-agent flat topology",
+      "hierarchical": "coordinator-specialist hierarchical topology",
+      "debate": "multi-agent debate topology",
+      "DIT": "Decomposability-Iterativeness-Tool Diversity (always capitalize)",
+      "tau": "quality threshold (always Greek letter tau)",
+      "ParetOrch": "ParetOrch (always PascalCase with capital O)",
+      "quality_retention": "quality retention ratio (fraction of peak accuracy retained)",
+      "cost_reduction": "cost reduction (fraction of cost saved vs baseline)"
+    },
+    "narrative_arc": [
+      "Problem: Multi-agent topologies have vastly different costs but practitioners select blind to cost-quality tradeoffs",
+      "Gap: Existing cost routing operates at model level; topology-level cost optimization is unstudied",
+      "Insight: DIT task features predict which topology is cost-optimal; most tasks need only flat topology",
+      "Method: ParetOrch uses DIT features + cost models to navigate the Pareto frontier",
+      "Evidence: 53% cost reduction, 95.6% quality retention across 84 tasks, 756 topology runs, 3 seeds",
+      "Implication: Simple rule of thumb (DIT < 0.35 → flat) handles most real-world tasks cheaply"
+    ]
+  }
+}
