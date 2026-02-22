@@ -1,0 +1,53 @@
+{
+  "Summary": "The paper introduces ParetOrch, a framework for Pareto-optimal routing between multi-agent LLM orchestration topologies (flat, hierarchical, debate) based on task characteristics. The approach uses DIT (Decomposability, Iterativeness, Tool Diversity) features to predict per-topology success probability and selects the cheapest topology meeting a configurable quality threshold \u03c4. Evaluation on 84 tasks with 2,016 total runs shows 35.5% cost reduction relative to always-debate while retaining 92.1% of peak quality. Key contributions include the first topology-level Pareto optimization framework, DIT-conditioned routing, comprehensive empirical evaluation, and a crossover insight at DIT magnitude ~0.35.",
+  "Strengths": [
+    "Novel problem formulation bridging cost-aware model routing with topology selection",
+    "Extensive empirical evaluation: 2,016 runs across 84 tasks, 3 seeds, 4 baselines",
+    "Interpretable DIT features grounded in Simon's near-decomposability theory",
+    "Actionable crossover insight (DIT ~0.35) provides practitioners with a deployable rule of thumb",
+    "Well-organized paper with clear figures, tables, and derivations",
+    "Comprehensive ablation study showing DIT features contribute largest margin (35.5%)",
+    "Good statistical rigor with confidence intervals and permutation tests"
+  ],
+  "Weaknesses": [
+    "Simulated costs from token counting rather than real API billing - significant gap for practical deployment",
+    "Simple logistic regression predictor for quality estimation; neural approaches could improve accuracy",
+    "Limited scope: only 3 topologies and single base model (GPT-4o)",
+    "DIT feature extraction process not adequately detailed; mentions 'one classifier pass' without specifics",
+    "Moderate cross-validated routing accuracy (82.1%) - routing failures could degrade quality",
+    "Threshold \u03c4 = 0.72 selection lacks deeper justification; appears somewhat arbitrary",
+    "Synthetic tasks (84 tasks) may not match production task distributions",
+    "No analysis of failure modes when routing decisions are incorrect",
+    "Missing comparison with more sophisticated routing policies or learned predictors"
+  ],
+  "Originality": 4,
+  "Quality": 3,
+  "Clarity": 4,
+  "Significance": 3,
+  "Questions": [
+    "Can you provide more details on the DIT feature extractor? What classifier is used, and how is it trained?",
+    "Why choose logistic regression over more sophisticated models (e.g., gradient boosting, neural networks) for quality prediction?",
+    "How sensitive are the results to the choice of base model? Would the topology rankings change with smaller models?",
+    "The paper mentions 82.1% cross-validated accuracy - what are the failure modes? When does the router make incorrect decisions?",
+    "What happens when routing decisions are wrong? Is there analysis of quality degradation for misrouted tasks?",
+    "How do you determine the optimal \u03c4 for different application contexts? Is there guidance for practitioners?",
+    "Could the DIT crossover at 0.35 be better justified with theoretical analysis beyond empirical observation?",
+    "Real API costs involve latency, rate limits, and batching effects - why were simulated costs used and how would results change?"
+  ],
+  "Limitations": [
+    "Costs are simulated from token counting, not real API billing, which may not reflect actual production costs",
+    "DIT feature extraction requires a classifier pass per task, adding overhead not accounted for in the latency analysis",
+    "Limited to 3 topologies and single base model (GPT-4o); generalizability to other settings unclear",
+    "Logistic regression predictor is simple; more complex predictors might improve routing accuracy",
+    "Synthetic task evaluation suite of 84 tasks may not match production workload distributions",
+    "Routing accuracy of 82.1% means ~18% of tasks are misrouted, potentially degrading quality",
+    "Fixed quality threshold \u03c4 requires manual tuning; no automated adaptation mechanism"
+  ],
+  "Ethical Concerns": false,
+  "Soundness": 3,
+  "Presentation": 4,
+  "Contribution": 3,
+  "Overall": 6,
+  "Confidence": 4,
+  "Decision": "Accept"
+}
