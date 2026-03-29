@@ -1,0 +1,27 @@
+{
+  "section": "experiments",
+  "draft_version": 1,
+  "scores": {
+    "quality": 7,
+    "clarity": 8,
+    "originality": "N/A",
+    "significance": "N/A"
+  },
+  "citation_count": 3,
+  "citation_target": "2-4",
+  "word_count": 815,
+  "word_count_target": 800,
+  "weaknesses": [
+    "DIT annotation methodology lacks detail on annotator identity, inter-annotator agreement, and validation procedure",
+    "Task selection criteria not explained -- unclear whether 84 tasks represent a principled sample or convenience collection",
+    "Cost multipliers presented as averages without per-task variance or confidence intervals",
+    "No wall-clock timing or hardware details (acceptable for API-based experiments but may draw reviewer questions)",
+    "Majority-class baseline description is thin -- does not specify which topology wins majority-class selection in the training data"
+  ],
+  "revision_priority": [
+    "Add 1-2 sentences on DIT annotation methodology (who annotated, agreement metric)",
+    "Clarify task selection criteria or sampling strategy",
+    "Specify which topology the majority-class baseline selects",
+    "Consider adding a sentence on API call latency if wall-clock timing data is available"
+  ]
+}

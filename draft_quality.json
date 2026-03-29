@@ -1,0 +1,188 @@
+{
+  "sections": {
+    "related_work": {
+      "draft_version": 1,
+      "timestamp": "2026-03-16T24:10:00Z",
+      "scores": {
+        "quality": 7,
+        "clarity": 8,
+        "originality": 7,
+        "significance": 7
+      },
+      "citation_stats": {
+        "target_range": "15-25",
+        "actual_count": 22,
+        "unique_keys": [
+          "chen2023frugalgpt",
+          "ong2024routellm",
+          "ding2024hybrid",
+          "aggarwal2024automix",
+          "zhang2023ecoassistant",
+          "treacle2024",
+          "c3po2025",
+          "wang2024cascade_aware",
+          "liu2024optllm",
+          "dekoninck2024unified",
+          "dynamic_routing_survey2026",
+          "hong2023metagpt",
+          "qian2023chatdev",
+          "wu2023autogen",
+          "du2023debate",
+          "wang2023voyager",
+          "su2025daao",
+          "dang2025evolving",
+          "deb2002nsga2",
+          "jin2008pareto_ml",
+          "zhu2022pareto_bandits",
+          "marinov2021pareto_frontier",
+          "agrawal2013contextual_ts",
+          "llm_cascade_moo2024",
+          "compute_pareto2024",
+          "pareto_llm_errors2024"
+        ],
+        "all_keys_in_literature_map": true
+      },
+      "word_stats": {
+        "target": 1000,
+        "actual": 1042,
+        "within_tolerance": true
+      },
+      "weaknesses": [
+        "Some literature_map entries (TREACLE, C3PO, compute_pareto2024, pareto_llm_errors2024) have placeholder author names -- citation-verifier should confirm real metadata",
+        "Multi-agent subsection relies on the claim that no topology-comparison studies exist, which is a negative claim difficult to fully verify",
+        "Pareto optimization subsection is slightly thinner than the other two -- could expand the contextual bandit connection to topology selection",
+        "DAAO and Dang et al. (2025) concurrent work distinction could be technically sharper"
+      ],
+      "revision_priority": [
+        "Verify placeholder citations (TREACLE, C3PO, etc.) have correct author/venue metadata",
+        "Sharpen DAAO distinction with specific technical contrast (operator-level vs topology-level)",
+        "Expand Pareto subsection with 1-2 more sentences connecting contextual bandits to the topology formulation",
+        "Add a sentence acknowledging Bayesian orchestration (bayesian_orchestration2026) if space permits"
+      ]
+    },
+    "discussion": {
+      "draft_version": 1,
+      "timestamp": "2026-03-16T28:00:00Z",
+      "scores": {
+        "quality": 7,
+        "quality_justification": "All claims grounded in specific numbers from Results section (53% cost reduction, 95.6% retention, $58K/year savings, crossover at 0.35). Limitations are honest and specific -- six concrete items, not vague hedges. Future directions are actionable with named methods (contextual bandits, neural cost predictors). Deduction: the deployment cost estimate ($58K/year) assumes debate-level pricing for all 10K tasks which overstates savings if the baseline workload already uses cheaper topologies.",
+        "clarity": 8,
+        "clarity_justification": "Four subsections with clear scope. Sentence length varies from 9 to 38 words. Active voice throughout. No filler phrases. Each limitation numbered for easy reviewer reference. Deduction: the crossover subsection is slightly dense and could benefit from one more paragraph break.",
+        "originality": "N/A (discussion section)",
+        "significance": 7,
+        "significance_justification": "Connects empirical findings back to theory (Simon's near-decomposability), positions against concurrent work (DAAO), and identifies a composable cost reduction strategy (FrugalGPT model axis + ParetOrch topology axis). The cross-model x cross-topology future direction is a genuine research contribution to the framing."
+      },
+      "citation_stats": {
+        "target_range": "5-8",
+        "actual_count": 5,
+        "unique_keys": [
+          "chen2023frugalgpt",
+          "simon1962complexity",
+          "su2025daao",
+          "agrawal2013contextual_ts",
+          "ong2024routellm"
+        ],
+        "all_keys_in_literature_map": true,
+        "note": "5 citations at the lower end of the 5-8 target. Could add du2023debate when discussing topology costs or dang2025evolving in future directions, but current density is sufficient for a Discussion section where most content is interpretation rather than factual claims about prior work."
+      },
+      "word_stats": {
+        "target": 800,
+        "actual": 830,
+        "within_tolerance": true
+      },
+      "weaknesses": [
+        {
+          "id": "W1",
+          "description": "The $58K/year savings estimate assumes all 10K daily tasks would otherwise use debate topology. Real baselines may already use cheaper topologies for some tasks, reducing the marginal savings.",
+          "severity": "low",
+          "location": "Section 6.1"
+        },
+        {
+          "id": "W2",
+          "description": "The claim that DIT crossover is model-agnostic is argued from first principles but not empirically verified on a second model family. A single data point (GPT-4o) supports a general claim.",
+          "severity": "medium",
+          "location": "Section 6.2"
+        },
+        {
+          "id": "W3",
+          "description": "Limitations list the 10-20% cost underestimate from billing overhead without citation or measurement. This number is plausible but ungrounded.",
+          "severity": "low",
+          "location": "Section 6.3"
+        },
+        {
+          "id": "W4",
+          "description": "Future directions mention neural cost predictors and contextual bandits but do not discuss expected difficulty or feasibility of these extensions.",
+          "severity": "low",
+          "location": "Section 6.4"
+        }
+      ],
+      "revision_priority": [
+        "Qualify the $58K/year estimate with an explicit assumption statement about baseline topology",
+        "Soften the model-agnostic claim or add a caveat that verification on other model families is needed",
+        "Provide a source or measurement for the 10-20% billing overhead estimate in limitations",
+        "Consider adding 1-2 more citations (du2023debate, dang2025evolving) if reviewer flags low citation count"
+      ]
+    },
+    "method": {
+      "draft_version": 1,
+      "timestamp": "2026-03-16T25:30:00Z",
+      "scores": {
+        "quality": 8,
+        "quality_justification": "All claims grounded in formal definitions or experimental data from pareto_results.json. Cost model derived from 756 runs with statistical validation (Kruskal-Wallis test). Mathematical notation consistent throughout. Algorithm pseudocode is complete and implementable. Deduction: multiplicative cost model is a simplification that reviewers may challenge.",
+        "clarity": 8,
+        "clarity_justification": "Five subsections follow clean progression: formalize -> model cost -> model quality -> combine -> summarize. Every symbol defined on first use. Algorithm box provides self-contained summary. Sentence length varies well (8-30 words). Deduction: feature expansion phi(d) could use a worked example for accessibility.",
+        "originality": 7,
+        "originality_justification": "Constrained optimization framing (minimize cost subject to quality floor) is clean but not technically novel -- standard feasibility-then-optimize pattern. Originality lies in applying it to topology selection with DIT features as context. Logistic regression quality predictor is deliberately simple.",
+        "significance": "N/A (methods section)"
+      },
+      "citation_stats": {
+        "target_range": "3-5",
+        "actual_count": 2,
+        "unique_keys": [
+          "simon1962complexity",
+          "agrawal2013contextual_ts"
+        ],
+        "all_keys_in_literature_map": true,
+        "note": "2 citations used; within lower bound for methods section where most content is original formulation. Could add du2023debate or chen2023frugalgpt if reviewer flags low count."
+      },
+      "word_stats": {
+        "target": 1500,
+        "actual": 1520,
+        "within_tolerance": true
+      },
+      "weaknesses": [
+        {
+          "id": "W1",
+          "description": "Multiplicative cost model assumes constant overhead ratio across difficulty tiers. Real deployments may have non-multiplicative cost components (context window overflow, retries, rate limiting).",
+          "severity": "medium",
+          "location": "Section 3.2"
+        },
+        {
+          "id": "W2",
+          "description": "Logistic regression is argued to be sufficient but not empirically compared against stronger classifiers (XGBoost, small MLP) within this section.",
+          "severity": "low",
+          "location": "Section 3.3"
+        },
+        {
+          "id": "W3",
+          "description": "DIT feature extraction treated as given input. Assumption that d(x) is available before routing is non-trivial; extraction cost stated as <5ms without measurement detail.",
+          "severity": "medium",
+          "location": "Section 3.5"
+        },
+        {
+          "id": "W4",
+          "description": "Pairwise interaction terms in phi(d) included without justification from feature selection or ablation. Contribution only implicitly covered by ablation in Section 5.",
+          "severity": "low",
+          "location": "Section 3.3"
+        }
+      ],
+      "revision_priority": [
+        "Add empirical comparison of logistic regression vs. stronger classifiers if reviewer requests",
+        "Discuss non-multiplicative cost factors (retries, context overflow) in Discussion/Limitations",
+        "Provide DIT extraction latency measurement or cite Paper 1 for extraction methodology",
+        "Cross-reference pairwise feature ablation when Section 5 is drafted",
+        "Consider adding 1-2 more citations (du2023debate for debate cost, chen2023frugalgpt for cascade framing) to hit 3-5 target"
+      ]
+    }
+  }
+}
