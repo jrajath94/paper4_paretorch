@@ -1,0 +1,570 @@
+{
+  "audit_metadata": {
+    "paper": "Paper 4: ParetOrch: Cost-Quality Pareto Optimization for Multi-Agent Topology Selection",
+    "audited_at": "2026-03-17T12:00:00Z",
+    "sections_scanned": [
+      "paper/output/sections/abstract.md",
+      "paper/output/sections/introduction.md",
+      "paper/output/sections/related_work.md",
+      "paper/output/sections/method.md",
+      "paper/output/sections/experiments.md",
+      "paper/output/sections/results.md",
+      "paper/output/sections/discussion.md",
+      "paper/output/sections/conclusion.md"
+    ],
+    "bib_file_checked": "paper/output/adaptswitch/references.bib (NOTE: this bib is for Paper 3 AdaptSwitch, not Paper 4 ParetOrch -- no dedicated Paper 4 bib exists yet)"
+  },
+  "total_citations": 25,
+  "unique_citation_keys": [
+    "aggarwal2024automix",
+    "agrawal2013contextual_ts",
+    "agrawal2013thompson",
+    "c3po2025",
+    "chen2023frugalgpt",
+    "compute_pareto2024",
+    "dang2025evolving",
+    "deb2002nsga2",
+    "ding2024hybrid",
+    "du2023debate",
+    "dynamic_routing_survey2026",
+    "hong2024metagpt",
+    "hu2024routerbench",
+    "jin2008pareto_ml",
+    "liu2024optllm",
+    "mialon2023gaia",
+    "ong2024routellm",
+    "qian2024chatdev",
+    "simon1962complexity",
+    "su2025daao",
+    "treacle2024",
+    "wang2023voyager",
+    "wu2023autogen",
+    "zhang2023ecoassistant",
+    "zhuo2025bamas"
+  ],
+  "verified_real": 25,
+  "fabricated": [],
+  "missing_bib": [
+    {
+      "key": "aggarwal2024automix",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "AutoMix: Automatically Mixing Language Models",
+      "verified_authors": "Aman Madaan, Pranjal Aggarwal, Ankit Anand, Srividya Pranavi Potharaju, et al.",
+      "verified_year": 2024,
+      "verified_venue": "NeurIPS 2024",
+      "arxiv_id": "2310.12963"
+    },
+    {
+      "key": "c3po2025",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "C3PO: Optimized Large Language Model Cascades with Probabilistic Cost Constraints for Reasoning",
+      "verified_authors": "Antonios Valkanas, Soumyasundar Pal, Pavel Rumiantsev, Yingxue Zhang, Mark Coates",
+      "verified_year": 2025,
+      "verified_venue": "NeurIPS 2025",
+      "arxiv_id": "2511.07396"
+    },
+    {
+      "key": "chen2023frugalgpt",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance",
+      "verified_authors": "Lingjiao Chen, Matei Zaharia, James Zou",
+      "verified_year": 2023,
+      "verified_venue": "arXiv preprint",
+      "arxiv_id": "2305.05176"
+    },
+    {
+      "key": "compute_pareto2024",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry. NOTE: year in key says 2024 but paper was submitted Dec 2025.",
+      "verified_title": "Compute-Accuracy Pareto Frontiers for Open-Source Reasoning Large Language Models",
+      "verified_authors": "Akos Prucs, Marton Csutora, Matyas Antal, Mark Marosi",
+      "verified_year": 2025,
+      "verified_venue": "arXiv preprint",
+      "arxiv_id": "2512.24776"
+    },
+    {
+      "key": "dang2025evolving",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "Multi-Agent Collaboration via Evolving Orchestration",
+      "verified_authors": "Yufan Dang, Chen Qian, et al.",
+      "verified_year": 2025,
+      "verified_venue": "NeurIPS 2025",
+      "arxiv_id": "2505.19591"
+    },
+    {
+      "key": "deb2002nsga2",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "A Fast and Elitist Multiobjective Genetic Algorithm: NSGA-II",
+      "verified_authors": "Kalyanmoy Deb, Amrit Pratap, Sameer Agarwal, T. Meyarivan",
+      "verified_year": 2002,
+      "verified_venue": "IEEE Transactions on Evolutionary Computation, 6(2):182-197",
+      "doi": "10.1109/4235.996017"
+    },
+    {
+      "key": "ding2024hybrid",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing",
+      "verified_authors": "Dujian Ding, Ankur Mallick, Chi Wang, Robert Sim, Subhabrata Mukherjee, et al.",
+      "verified_year": 2024,
+      "verified_venue": "ICLR 2024",
+      "arxiv_id": "2404.14618"
+    },
+    {
+      "key": "du2023debate",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "Improving Factuality and Reasoning in Language Models through Multiagent Debate",
+      "verified_authors": "Yilun Du, Shuang Li, Antonio Torralba, Joshua B. Tenenbaum, Igor Mordatch",
+      "verified_year": 2023,
+      "verified_venue": "ICML 2024",
+      "arxiv_id": "2305.14325"
+    },
+    {
+      "key": "dynamic_routing_survey2026",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "Dynamic Model Routing and Cascading for Efficient LLM Inference: A Survey",
+      "verified_authors": "Yasmin Moslem, John D. Kelleher",
+      "verified_year": 2026,
+      "verified_venue": "arXiv preprint",
+      "arxiv_id": "2603.04445"
+    },
+    {
+      "key": "hu2024routerbench",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "RouterBench: A Benchmark for Multi-LLM Routing System",
+      "verified_authors": "Qitian Jason Hu, Jacob Bieker, Xiuyu Li, Nan Jiang, et al.",
+      "verified_year": 2024,
+      "verified_venue": "arXiv preprint",
+      "arxiv_id": "2403.12031"
+    },
+    {
+      "key": "jin2008pareto_ml",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "Pareto-Based Multiobjective Machine Learning: An Overview and Case Studies",
+      "verified_authors": "Yaochu Jin, Bernhard Sendhoff",
+      "verified_year": 2008,
+      "verified_venue": "IEEE Transactions on Systems, Man, and Cybernetics, Part C, 38(3):397-415",
+      "doi": "10.1109/TSMCC.2008.919172"
+    },
+    {
+      "key": "liu2024optllm",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "OptLLM: Optimal Assignment of Queries to Large Language Models",
+      "verified_authors": "Yueyue Liu, Hongyu Zhang, Yuantian Miao, Van-Hoang Le, Zhiqiang Li",
+      "verified_year": 2024,
+      "verified_venue": "ICWS 2024",
+      "arxiv_id": "2405.15130"
+    },
+    {
+      "key": "mialon2023gaia",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "GAIA: A Benchmark for General AI Assistants",
+      "verified_authors": "Gregoire Mialon, Clementine Fourrier, Craig Swift, Thomas Wolf, Yann LeCun, Thomas Scialom",
+      "verified_year": 2023,
+      "verified_venue": "ICLR 2024",
+      "arxiv_id": "2311.12983"
+    },
+    {
+      "key": "ong2024routellm",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "RouteLLM: Learning to Route LLMs with Preference Data",
+      "verified_authors": "Isaac Ong, Amjad Almahairi, Vincent Wu, Wei-Lin Chiang, Tianhao Wu, Joseph E. Gonzalez, M Waleed Kadous, Ion Stoica",
+      "verified_year": 2024,
+      "verified_venue": "ICLR 2025",
+      "arxiv_id": "2406.18665"
+    },
+    {
+      "key": "simon1962complexity",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "The Architecture of Complexity",
+      "verified_authors": "Herbert A. Simon",
+      "verified_year": 1962,
+      "verified_venue": "Proceedings of the American Philosophical Society, 106(6):467-482"
+    },
+    {
+      "key": "su2025daao",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "Difficulty-Aware Agentic Orchestration for Query-Specific Multi-Agent Workflows",
+      "verified_authors": "Jinwei Su, Qizhen Lan, Yinghui Xia, Xinyuan Song",
+      "verified_year": 2025,
+      "verified_venue": "arXiv preprint",
+      "arxiv_id": "2509.11079"
+    },
+    {
+      "key": "treacle2024",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "TREACLE: Thrifty Reasoning via Context-Aware LLM and Prompt Selection (Efficient Contextual LLM Cascades through Budget-Constrained Policy Learning)",
+      "verified_authors": "Multiple authors (NeurIPS 2024 paper)",
+      "verified_year": 2024,
+      "verified_venue": "NeurIPS 2024",
+      "arxiv_id": "2404.13082"
+    },
+    {
+      "key": "zhang2023ecoassistant",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "EcoAssistant: Using LLM Assistant More Affordably and Accurately",
+      "verified_authors": "Jieyu Zhang, Ranjay Krishna, Ahmed H. Awadallah, Chi Wang",
+      "verified_year": 2023,
+      "verified_venue": "arXiv preprint",
+      "arxiv_id": "2310.03046"
+    },
+    {
+      "key": "zhuo2025bamas",
+      "status": "MISSING_BIB",
+      "note": "Real paper. No entry in references.bib. Needs BibTeX entry.",
+      "verified_title": "BAMAS: Structuring Budget-Aware Multi-Agent Systems",
+      "verified_authors": "Liming Yang, Junyu Luo, Xuanzhe Liu, Yiling Lou, Zhenpeng Chen",
+      "verified_year": 2025,
+      "verified_venue": "AAAI 2026",
+      "arxiv_id": "2511.21572"
+    },
+    {
+      "key": "agrawal2013contextual_ts",
+      "status": "MISSING_BIB",
+      "note": "Real paper. Used in method.md and discussion.md. The SAME paper as agrawal2013thompson (in references.bib) but with a different key. This is a DUPLICATE KEY bug -- the same paper is cited with two different keys in different sections.",
+      "verified_title": "Thompson Sampling for Contextual Bandits with Linear Payoffs",
+      "verified_authors": "Shipra Agrawal, Navin Goyal",
+      "verified_year": 2013,
+      "verified_venue": "ICML 2013",
+      "arxiv_id": "1209.3352"
+    }
+  ],
+  "wrong_metadata": [
+    {
+      "key": "zhuo2025bamas",
+      "issue": "WRONG_METADATA",
+      "details": "Citation key prefix 'zhuo' does not match any author. First author is Liming Yang. Last author (corresponding) is Zhenpeng Chen. Key should be yang2025bamas or chen2025bamas.",
+      "severity": "low"
+    },
+    {
+      "key": "compute_pareto2024",
+      "issue": "WRONG_METADATA",
+      "details": "Citation key says 2024 but the paper was posted to arXiv on 2025-12-31 (arXiv:2512.24776). Year in key is incorrect.",
+      "severity": "low"
+    },
+    {
+      "key": "du2023debate",
+      "issue": "WRONG_METADATA",
+      "details": "Key says 2023 (arXiv date) but paper was published at ICML 2024. Consider updating key to du2024debate if using publication year convention.",
+      "severity": "low"
+    },
+    {
+      "key": "ong2024routellm",
+      "issue": "WRONG_METADATA",
+      "details": "Key says 2024 (arXiv date) but paper was published at ICLR 2025. Consider updating key to ong2025routellm if using publication year convention.",
+      "severity": "low"
+    },
+    {
+      "key": "mialon2023gaia",
+      "issue": "WRONG_METADATA",
+      "details": "Key says 2023 (arXiv date) but paper was published at ICLR 2024. Consider updating key to mialon2024gaia if using publication year convention.",
+      "severity": "low"
+    },
+    {
+      "key": "aggarwal2024automix",
+      "issue": "WRONG_METADATA",
+      "details": "First author on arXiv is actually Aman Madaan (co-first with Pranjal Aggarwal). Key says aggarwal but madaan is listed first in final NeurIPS version. Minor.",
+      "severity": "low"
+    },
+    {
+      "key": "su2025daao",
+      "issue": "WRONG_METADATA",
+      "details": "Paper title in literature_map.json says 'Difficulty-Aware Agent Orchestration in LLM-Powered Workflows' but actual title on arXiv (v2) is 'Difficulty-Aware Agentic Orchestration for Query-Specific Multi-Agent Workflows'. The v1 title matches the literature_map.",
+      "severity": "low"
+    }
+  ],
+  "critical_issues": [
+    {
+      "issue": "DUPLICATE_KEY_BUG",
+      "details": "The same paper (Agrawal & Goyal, 2013, 'Thompson Sampling for Contextual Bandits with Linear Payoffs') is cited with TWO different keys: 'agrawal2013thompson' in related_work.md (line 34) and 'agrawal2013contextual_ts' in method.md (line 26) and discussion.md (line 46). These must be unified to a single key.",
+      "affected_files": [
+        "paper/output/sections/related_work.md",
+        "paper/output/sections/method.md",
+        "paper/output/sections/discussion.md"
+      ],
+      "fix": "Replace all instances with one key. Recommend: agrawal2013thompson (matches existing bib entry)."
+    },
+    {
+      "issue": "NO_PAPER4_BIB_FILE",
+      "details": "There is no bibliography.bib file for Paper 4 (ParetOrch). The only bib file is paper/output/adaptswitch/references.bib which belongs to Paper 3 (AdaptSwitch). Of the 25 citation keys used in Paper 4 sections, only 5 have matching entries in the AdaptSwitch bib (hong2024metagpt, qian2024chatdev, wu2023autogen, wang2023voyager, agrawal2013thompson). The other 20 keys have NO bib entry anywhere.",
+      "fix": "Create paper/output/bibliography.bib (or paper/output/paretorch/references.bib) with entries for all 25 citation keys."
+    }
+  ],
+  "summary": {
+    "total_unique_citation_keys": 25,
+    "all_verified_real": true,
+    "fabricated_count": 0,
+    "missing_bib_count": 20,
+    "wrong_metadata_count": 7,
+    "critical_bugs": 2,
+    "keys_with_bib_entry": ["hong2024metagpt", "qian2024chatdev", "wu2023autogen", "wang2023voyager", "agrawal2013thompson"],
+    "keys_without_bib_entry": [
+      "aggarwal2024automix", "agrawal2013contextual_ts", "c3po2025", "chen2023frugalgpt",
+      "compute_pareto2024", "dang2025evolving", "deb2002nsga2", "ding2024hybrid",
+      "du2023debate", "dynamic_routing_survey2026", "hu2024routerbench",
+      "jin2008pareto_ml", "liu2024optllm", "mialon2023gaia", "ong2024routellm",
+      "simon1962complexity", "su2025daao", "treacle2024", "zhang2023ecoassistant",
+      "zhuo2025bamas"
+    ]
+  },
+  "verification_details": [
+    {
+      "key": "chen2023frugalgpt",
+      "status": "VERIFIED_REAL",
+      "title": "FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance",
+      "authors": ["Lingjiao Chen", "Matei Zaharia", "James Zou"],
+      "year": 2023,
+      "venue": "arXiv:2305.05176",
+      "source": "arXiv, Semantic Scholar, DBLP"
+    },
+    {
+      "key": "ong2024routellm",
+      "status": "VERIFIED_REAL",
+      "title": "RouteLLM: Learning to Route LLMs with Preference Data",
+      "authors": ["Isaac Ong", "Amjad Almahairi", "Vincent Wu", "Wei-Lin Chiang", "Tianhao Wu", "Joseph E. Gonzalez", "M Waleed Kadous", "Ion Stoica"],
+      "year": 2024,
+      "venue": "ICLR 2025 (arXiv:2406.18665)",
+      "source": "arXiv, OpenReview, ICLR proceedings, DBLP"
+    },
+    {
+      "key": "ding2024hybrid",
+      "status": "VERIFIED_REAL",
+      "title": "Hybrid LLM: Cost-Efficient and Quality-Aware Query Routing",
+      "authors": ["Dujian Ding", "Ankur Mallick", "Chi Wang", "Robert Sim", "Subhabrata Mukherjee", "Victor Ruhle", "Laks V.S. Lakshmanan", "Ahmed Awadallah"],
+      "year": 2024,
+      "venue": "ICLR 2024 (arXiv:2404.14618)",
+      "source": "arXiv, OpenReview, ICLR proceedings"
+    },
+    {
+      "key": "aggarwal2024automix",
+      "status": "VERIFIED_REAL",
+      "title": "AutoMix: Automatically Mixing Language Models",
+      "authors": ["Aman Madaan", "Pranjal Aggarwal", "Ankit Anand", "Srividya Pranavi Potharaju", "et al."],
+      "year": 2024,
+      "venue": "NeurIPS 2024 (arXiv:2310.12963)",
+      "source": "arXiv, OpenReview, NeurIPS proceedings"
+    },
+    {
+      "key": "zhang2023ecoassistant",
+      "status": "VERIFIED_REAL",
+      "title": "EcoAssistant: Using LLM Assistant More Affordably and Accurately",
+      "authors": ["Jieyu Zhang", "Ranjay Krishna", "Ahmed H. Awadallah", "Chi Wang"],
+      "year": 2023,
+      "venue": "arXiv:2310.03046",
+      "source": "arXiv, GitHub, Microsoft Research"
+    },
+    {
+      "key": "treacle2024",
+      "status": "VERIFIED_REAL",
+      "title": "Efficient Contextual LLM Cascades through Budget-Constrained Policy Learning (TREACLE)",
+      "authors": ["NeurIPS 2024 authors"],
+      "year": 2024,
+      "venue": "NeurIPS 2024 (arXiv:2404.13082)",
+      "source": "arXiv, OpenReview, NeurIPS proceedings"
+    },
+    {
+      "key": "c3po2025",
+      "status": "VERIFIED_REAL",
+      "title": "C3PO: Optimized Large Language Model Cascades with Probabilistic Cost Constraints for Reasoning",
+      "authors": ["Antonios Valkanas", "Soumyasundar Pal", "Pavel Rumiantsev", "Yingxue Zhang", "Mark Coates"],
+      "year": 2025,
+      "venue": "NeurIPS 2025 (arXiv:2511.07396)",
+      "source": "arXiv, OpenReview, NeurIPS proceedings, GitHub"
+    },
+    {
+      "key": "liu2024optllm",
+      "status": "VERIFIED_REAL",
+      "title": "OptLLM: Optimal Assignment of Queries to Large Language Models",
+      "authors": ["Yueyue Liu", "Hongyu Zhang", "Yuantian Miao", "Van-Hoang Le", "Zhiqiang Li"],
+      "year": 2024,
+      "venue": "ICWS 2024 (arXiv:2405.15130)",
+      "source": "arXiv, IEEE Xplore"
+    },
+    {
+      "key": "dynamic_routing_survey2026",
+      "status": "VERIFIED_REAL",
+      "title": "Dynamic Model Routing and Cascading for Efficient LLM Inference: A Survey",
+      "authors": ["Yasmin Moslem", "John D. Kelleher"],
+      "year": 2026,
+      "venue": "arXiv:2603.04445",
+      "source": "arXiv, HuggingFace Papers"
+    },
+    {
+      "key": "hong2024metagpt",
+      "status": "VERIFIED_REAL",
+      "title": "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework",
+      "authors": ["Sirui Hong", "Mingchen Zhuge", "et al."],
+      "year": 2024,
+      "venue": "ICLR 2024 (arXiv:2308.00352)",
+      "source": "arXiv, OpenReview, ICLR proceedings"
+    },
+    {
+      "key": "qian2024chatdev",
+      "status": "VERIFIED_REAL",
+      "title": "ChatDev: Communicative Agents for Software Development",
+      "authors": ["Chen Qian", "Wei Liu", "et al."],
+      "year": 2024,
+      "venue": "ACL 2024 (arXiv:2307.07924)",
+      "source": "arXiv, ACL Anthology"
+    },
+    {
+      "key": "wu2023autogen",
+      "status": "VERIFIED_REAL",
+      "title": "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+      "authors": ["Qingyun Wu", "Gagan Bansal", "Jieyu Zhang", "et al."],
+      "year": 2023,
+      "venue": "arXiv:2308.08155",
+      "source": "arXiv, Semantic Scholar, OpenReview"
+    },
+    {
+      "key": "du2023debate",
+      "status": "VERIFIED_REAL",
+      "title": "Improving Factuality and Reasoning in Language Models through Multiagent Debate",
+      "authors": ["Yilun Du", "Shuang Li", "Antonio Torralba", "Joshua B. Tenenbaum", "Igor Mordatch"],
+      "year": 2023,
+      "venue": "ICML 2024 (arXiv:2305.14325)",
+      "source": "arXiv, ICML proceedings, GitHub"
+    },
+    {
+      "key": "wang2023voyager",
+      "status": "VERIFIED_REAL",
+      "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+      "authors": ["Guanzhi Wang", "Yuqi Xie", "Yunfan Jiang", "et al."],
+      "year": 2023,
+      "venue": "arXiv:2305.16291",
+      "source": "arXiv, Semantic Scholar, project page"
+    },
+    {
+      "key": "su2025daao",
+      "status": "VERIFIED_REAL",
+      "title": "Difficulty-Aware Agentic Orchestration for Query-Specific Multi-Agent Workflows",
+      "authors": ["Jinwei Su", "Qizhen Lan", "Yinghui Xia", "Xinyuan Song"],
+      "year": 2025,
+      "venue": "arXiv:2509.11079",
+      "source": "arXiv, Semantic Scholar, ResearchGate"
+    },
+    {
+      "key": "dang2025evolving",
+      "status": "VERIFIED_REAL",
+      "title": "Multi-Agent Collaboration via Evolving Orchestration",
+      "authors": ["Yufan Dang", "Chen Qian", "et al."],
+      "year": 2025,
+      "venue": "NeurIPS 2025 (arXiv:2505.19591)",
+      "source": "arXiv, NeurIPS proceedings"
+    },
+    {
+      "key": "deb2002nsga2",
+      "status": "VERIFIED_REAL",
+      "title": "A Fast and Elitist Multiobjective Genetic Algorithm: NSGA-II",
+      "authors": ["Kalyanmoy Deb", "Amrit Pratap", "Sameer Agarwal", "T. Meyarivan"],
+      "year": 2002,
+      "venue": "IEEE Transactions on Evolutionary Computation, 6(2):182-197",
+      "source": "IEEE Xplore, Semantic Scholar"
+    },
+    {
+      "key": "jin2008pareto_ml",
+      "status": "VERIFIED_REAL",
+      "title": "Pareto-Based Multiobjective Machine Learning: An Overview and Case Studies",
+      "authors": ["Yaochu Jin", "Bernhard Sendhoff"],
+      "year": 2008,
+      "venue": "IEEE Transactions on Systems, Man, and Cybernetics, Part C, 38(3):397-415",
+      "source": "IEEE Xplore, Semantic Scholar"
+    },
+    {
+      "key": "agrawal2013thompson",
+      "status": "VERIFIED_REAL",
+      "title": "Thompson Sampling for Contextual Bandits with Linear Payoffs",
+      "authors": ["Shipra Agrawal", "Navin Goyal"],
+      "year": 2013,
+      "venue": "ICML 2013 (arXiv:1209.3352)",
+      "source": "arXiv, ICML proceedings, Semantic Scholar"
+    },
+    {
+      "key": "agrawal2013contextual_ts",
+      "status": "VERIFIED_REAL_DUPLICATE",
+      "title": "Thompson Sampling for Contextual Bandits with Linear Payoffs",
+      "authors": ["Shipra Agrawal", "Navin Goyal"],
+      "year": 2013,
+      "venue": "ICML 2013 (arXiv:1209.3352)",
+      "source": "Same paper as agrawal2013thompson -- DUPLICATE KEY",
+      "note": "This is the exact same paper as agrawal2013thompson but with a different citation key. Must be unified."
+    },
+    {
+      "key": "compute_pareto2024",
+      "status": "VERIFIED_REAL",
+      "title": "Compute-Accuracy Pareto Frontiers for Open-Source Reasoning Large Language Models",
+      "authors": ["Akos Prucs", "Marton Csutora", "Matyas Antal", "Mark Marosi"],
+      "year": 2025,
+      "venue": "arXiv:2512.24776",
+      "source": "arXiv"
+    },
+    {
+      "key": "mialon2023gaia",
+      "status": "VERIFIED_REAL",
+      "title": "GAIA: A Benchmark for General AI Assistants",
+      "authors": ["Gregoire Mialon", "Clementine Fourrier", "Craig Swift", "Thomas Wolf", "Yann LeCun", "Thomas Scialom"],
+      "year": 2023,
+      "venue": "ICLR 2024 (arXiv:2311.12983)",
+      "source": "arXiv, ICLR proceedings, Meta AI"
+    },
+    {
+      "key": "hu2024routerbench",
+      "status": "VERIFIED_REAL",
+      "title": "RouterBench: A Benchmark for Multi-LLM Routing System",
+      "authors": ["Qitian Jason Hu", "Jacob Bieker", "Xiuyu Li", "Nan Jiang", "et al."],
+      "year": 2024,
+      "venue": "arXiv:2403.12031",
+      "source": "arXiv, GitHub, Semantic Scholar"
+    },
+    {
+      "key": "simon1962complexity",
+      "status": "VERIFIED_REAL",
+      "title": "The Architecture of Complexity",
+      "authors": ["Herbert A. Simon"],
+      "year": 1962,
+      "venue": "Proceedings of the American Philosophical Society, 106(6):467-482",
+      "source": "JSTOR, PhilPapers, multiple institutional repositories"
+    },
+    {
+      "key": "zhuo2025bamas",
+      "status": "VERIFIED_REAL",
+      "title": "BAMAS: Structuring Budget-Aware Multi-Agent Systems",
+      "authors": ["Liming Yang", "Junyu Luo", "Xuanzhe Liu", "Yiling Lou", "Zhenpeng Chen"],
+      "year": 2025,
+      "venue": "AAAI 2026 (arXiv:2511.21572)",
+      "source": "arXiv, ACM Digital Library"
+    }
+  ],
+  "user_requested_keys_not_in_paper": {
+    "note": "The following keys were listed in the user request but do NOT appear in any \\cite{} command in the paper sections. They may be in the literature_map.json but are not actually cited.",
+    "keys": [
+      "chen2023frugalgpt_as_chen_2023",
+      "ong2024routellm_as_ong_2025",
+      "wang2024cascade_aware",
+      "dekoninck2024unified",
+      "hong2023metagpt",
+      "qian2023chatdev",
+      "marinov2021pareto_frontier",
+      "zhu2022pareto_bandits",
+      "llm_cascade_moo2024",
+      "pareto_llm_errors2024"
+    ],
+    "explanation": "These keys appear in the literature_map.json but the paper sections use different citation keys. For example: the paper uses hong2024metagpt not hong2023metagpt; uses agrawal2013thompson not marinov2021pareto_frontier. The user-listed keys that are not cited in the paper at all (wang2024cascade_aware, dekoninck2024unified, marinov2021pareto_frontier, zhu2022pareto_bandits, llm_cascade_moo2024, pareto_llm_errors2024) are present in the literature_map but were NOT included in any section."
+  }
+}

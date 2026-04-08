@@ -1,0 +1,179 @@
+{
+  "audit_type": "internal_consistency",
+  "audit_date": "2026-03-17",
+  "paper": "ParetOrch: Cost-Quality Pareto Optimization for Multi-Agent Orchestration",
+  "sections_audited": [
+    "abstract",
+    "introduction",
+    "method",
+    "experiments",
+    "results",
+    "discussion",
+    "conclusion"
+  ],
+  "total_checks": 42,
+  "mismatches_found": 5,
+  "warnings": 3,
+  "mismatches": [
+    {
+      "id": "M1",
+      "severity": "HIGH",
+      "category": "dollar_amount",
+      "description": "Discussion daily/annual savings estimates are arithmetically wrong",
+      "locations": {
+        "discussion": "Section 6.1, paragraph 1: 'approximately $160/day or $58K/year in reduced API spend'",
+        "introduction": "Paragraph 2: 'always-debate costs approximately $380... always-flat costs $135'"
+      },
+      "expected_values": {
+        "derivation": "Always-debate total cost = $3.20 per 84 tasks. Per task = $0.03810. 10,000 tasks/day = $381. ParetOrch total cost = $1.49 per 84 tasks. Per task = $0.01774. 10,000 tasks/day = $177. Savings = $381 - $177 = $204/day. Annual = $204 * 365 = $74,460.",
+        "correct_daily_savings": "$204/day",
+        "correct_annual_savings": "~$74K/year"
+      },
+      "paper_claims": {
+        "daily_savings": "$160/day",
+        "annual_savings": "$58K/year"
+      },
+      "fix": "Replace '$160/day or $58K/year' with '$204/day or $74K/year' in Discussion Section 6.1. Alternatively, if the $160 figure comes from a different baseline assumption (e.g., not 100% debate), state the assumption explicitly."
+    },
+    {
+      "id": "M2",
+      "severity": "MEDIUM",
+      "category": "statistical_claim",
+      "description": "Cost CI width claim in Results does not match Table 1 CIs",
+      "locations": {
+        "results": "Section 5.5: 'for cost, $0.0014'",
+        "results_table1": "Table 1 CIs range from +/-$0.01 to +/-$0.02 (CI width = $0.02-$0.04)"
+      },
+      "expected_values": {
+        "derivation": "Table 1 shows ParetOrch cost CI = +/-$0.01, meaning CI width = $0.02. Always-Flat CI = +/-$0.01 (width $0.02). Random CI = +/-$0.02 (width $0.04). Mean CI width across all five policies = ($0.02 + $0.04 + $0.02 + $0.02 + $0.02) / 5 = $0.024. None of these yield $0.0014.",
+        "possible_explanation": "The $0.0014 may refer to per-task cost CI (total CI / 84), but this is not stated and would still not match: $0.02 / 84 = $0.000238.",
+        "correct_mean_ci_width": "$0.024 (total across 84 tasks)"
+      },
+      "paper_claims": {
+        "cost_ci_width": "$0.0014"
+      },
+      "fix": "Recompute the mean CI width for cost from Table 1 data. If $0.0014 refers to per-task CI, state units explicitly. Most likely the correct value is ~$0.024 for total cost CI width or ~$0.0003 for per-task."
+    },
+    {
+      "id": "M3",
+      "severity": "MEDIUM",
+      "category": "ungrounded_claim",
+      "description": "Discussion cites '89% of cost variance' for multiplicative model, but this number appears nowhere in Methods or Results",
+      "locations": {
+        "discussion": "Section 6.4: 'Our multiplicative approximation captures 89% of cost variance'",
+        "methods": "Section 3.2 discusses the multiplicative cost model but cites overhead ratios (2.10+/-0.08, 2.80+/-0.11) and Kruskal-Wallis p=0.34, not R-squared or variance explained",
+        "results": "No cost variance analysis appears in any results table"
+      },
+      "expected_values": {
+        "derivation": "No derivation possible -- the 89% figure has no source in the paper. It may come from an R-squared of the multiplicative model fit, but this was never reported.",
+        "correct_value": "Unknown -- needs to be computed and reported in Methods or Results, or removed from Discussion"
+      },
+      "paper_claims": {
+        "cost_variance_explained": "89%"
+      },
+      "fix": "Either (a) compute and report R-squared of the multiplicative cost model in Section 3.2 or Section 5.5, then reference that result in Discussion, or (b) remove the 89% claim and replace with qualitative language ('captures most of the cost variance') referencing the Kruskal-Wallis test."
+    },
+    {
+      "id": "M4",
+      "severity": "LOW",
+      "category": "rounding",
+      "description": "Always-Flat cost reduction rounds to 64.4% from data but Table 1 says 64.3%",
+      "locations": {
+        "results": "Table 1, Always-Flat row, Cost Reduction column: 64.3%"
+      },
+      "expected_values": {
+        "derivation": "1 - 1.14/3.20 = 1 - 0.35625 = 0.64375 = 64.4% (rounded to one decimal)",
+        "correct_value": "64.4%"
+      },
+      "paper_claims": {
+        "cost_reduction": "64.3%"
+      },
+      "fix": "Change 64.3% to 64.4% in Table 1, or verify from raw data that the unrounded ratio is slightly different (e.g., costs may have more decimal places than shown)."
+    },
+    {
+      "id": "M5",
+      "severity": "LOW",
+      "category": "rounding",
+      "description": "DIT Accuracy-Only cost reduction rounds to 9.7% from data but Table 1 says 9.6%",
+      "locations": {
+        "results": "Table 1, DIT Accuracy-Only row, Cost Reduction column: 9.6%"
+      },
+      "expected_values": {
+        "derivation": "1 - 2.89/3.20 = 1 - 0.903125 = 0.096875 = 9.7% (rounded to one decimal)",
+        "correct_value": "9.7%"
+      },
+      "paper_claims": {
+        "cost_reduction": "9.6%"
+      },
+      "fix": "Change 9.6% to 9.7% in Table 1, or verify from raw data that underlying costs differ slightly from the rounded values shown."
+    }
+  ],
+  "warnings": [
+    {
+      "id": "W1",
+      "severity": "NOTE",
+      "category": "double_counting",
+      "description": "The 2,016 run count may double-count topology evaluations that are also routing evaluations",
+      "locations": {
+        "experiments": "Section 4.4: '756 topology evaluation runs, plus 5 policies x 84 x 3 = 1,260 routing evaluation runs, for a total of 2,016 runs'"
+      },
+      "detail": "Always-Flat uses the flat column of the 756 topology runs. Always-Debate uses the debate column. These runs appear in both the 756 and the 1,260 counts. If we subtract the 3 always-X policies (3 * 84 * 3 = 756 duplicate runs), the true unique run count is 1,260. However, the paper may intentionally count routing evaluations separately from topology evaluations. A reviewer may question this.",
+      "fix": "Either (a) clarify that 2,016 counts evaluations (not unique executions) or (b) recompute: 756 unique topology executions + 2 novel baselines (Random, DIT-Accuracy-Only, Majority-Class) * 84 * 3 = 504 routing decisions on top = 1,260 unique. ParetOrch adds another 84 * 3 = 252 routing evaluations using existing topology data. Total unique executions = 756."
+    },
+    {
+      "id": "W2",
+      "severity": "NOTE",
+      "category": "unstated_threshold",
+      "description": "Introduction claims hierarchy dominates above DIT 0.55 and debate above 0.70, but Results only shows tier-level data, not per-DIT-magnitude data",
+      "locations": {
+        "introduction": "Paragraph 4: 'Above 0.55, hierarchical dominates. Above 0.70, debate justifies its premium.'",
+        "methods": "Section 3.3: 'at ||d|| > 0.55, hierarchical outperforms flat by 13.5 points; at ||d|| > 0.70, debate outperforms flat by 25.5 points'"
+      },
+      "detail": "These thresholds (0.55, 0.70) are plausible inferences from the tier-level data (medium mean DIT = 0.72, hard mean DIT = 1.10) but are not directly verified by Results tables or figures. No results table shows performance binned by DIT magnitude rather than difficulty tier.",
+      "fix": "Add a figure or table showing topology accuracy as a function of DIT magnitude (continuous), or soften the 0.55/0.70 claims to reference the difficulty tiers they map to."
+    },
+    {
+      "id": "W3",
+      "severity": "NOTE",
+      "category": "missing_baseline",
+      "description": "Majority-Class baseline is defined in Experiments but absent from Results Table 1",
+      "locations": {
+        "experiments": "Section 4.3: 'Majority-Class. Always selects the topology that achieves the highest training-set accuracy across all tasks.'",
+        "results": "Table 1 contains 5 rows: Always-Flat, Random, DIT Accuracy-Only, Always-Debate, ParetOrch. No Majority-Class row."
+      },
+      "detail": "The Experiments section defines 5 baselines. Table 1 shows only 4 baselines + ParetOrch. The Majority-Class baseline is never mentioned again after being defined. If it was run, its results should appear. If it was dropped, remove it from the baselines list.",
+      "fix": "Either add Majority-Class results to Table 1 or remove it from the baselines in Section 4.3. If Majority-Class is identical to Always-Debate (if debate has highest training accuracy), state this explicitly."
+    }
+  ],
+  "verified_consistent": [
+    "84 tasks count: consistent across abstract, introduction, experiments, results, conclusion",
+    "2,016 run count: consistent across abstract, introduction, experiments, conclusion (with double-counting caveat)",
+    "53.4% cost reduction: consistent across abstract, introduction, results Table 1, results Table 3, conclusion",
+    "95.6% quality retention: consistent across abstract, introduction, results Table 1, conclusion",
+    "$0.023 cost per correct answer: consistent between introduction and results",
+    "$0.047 always-debate cost per correct answer: consistent between introduction and results",
+    "DIT crossover ~0.35: consistent across abstract, introduction, methods, discussion, conclusion",
+    "Cost multipliers (1.0x, 2.1x, 2.8x): consistent across introduction, methods, experiments",
+    "Difficulty tiers (17+19+24+24=84): consistent in experiments",
+    "Table 1 quality retention ratios: all verified against accuracy/81.3%",
+    "Table 1 cost/correct: all verified against cost/(accuracy*84)",
+    "Table 1 cost reduction: all verified against 1-cost/3.20 (within rounding)",
+    "Table 2 difficulty gaps: all verified (1.8pp, 6.1pp, 17.6pp, 25.5pp)",
+    "Table 2 hierarchical efficiency: (75.3-61.8)/(79.4-61.8) = 0.767 ~ 0.77 verified",
+    "Table 3 tau=0.75 row: matches Table 1 ParetOrch row",
+    "Seeds (42, 137, 2024): consistent in experiments and results",
+    "p=0.41 on trivial debate-flat gap: consistent between introduction and results",
+    "12 task categories: count verified in experiments",
+    "Methods tau=0.65 and tau=0.85 values: match Results Table 3",
+    "Ablation DIT removal (+19.3% cost): consistent between abstract and results Table 4",
+    "Introduction 48.4% cost savings vs DIT acc-only: verified as 1-1.49/2.89 = 48.4%",
+    "Introduction 31.3% savings vs random: verified as 1-1.49/2.17 = 31.3%",
+    "Per-seed cost reduction values in Section 5.5: plausible and internally consistent (average ~53.4%)",
+    "DIT mean magnitudes by tier: 0.07, 0.34, 0.72, 1.10 -- monotonically increasing, consistent"
+  ],
+  "summary": {
+    "critical_issues": 1,
+    "description": "One high-severity arithmetic error in Discussion Section 6.1 (daily/annual savings off by ~$44/day or ~$16K/year). One medium-severity ungrounded statistic (89% cost variance). One medium-severity CI width mismatch. Two low-severity rounding discrepancies. Three structural warnings (run double-counting, missing baseline in results, unstated DIT thresholds).",
+    "recommendation": "Fix M1 (wrong dollar amounts) and M3 (ungrounded 89% claim) before submission. Investigate M2 (CI width). Address W3 (missing Majority-Class baseline) for completeness."
+  }
+}
