@@ -1,0 +1,215 @@
+{
+  "round": "council_final",
+  "timestamp": "2026-03-17T12:00:00Z",
+  "paper": "ParetOrch: Cost-Quality Pareto Optimization for Multi-Agent LLM Topology Selection",
+  "venue": "NeurIPS 2026",
+  "reviewers": {
+    "methodology_skeptic": {
+      "quality": 5,
+      "clarity": 7,
+      "originality": 6,
+      "significance": 6,
+      "overall": 5,
+      "overall_label": "borderline_reject",
+      "confidence": 4,
+      "key_concern": "84 tasks underpowered; potential train-test contamination in quality predictor; simulated costs not validated"
+    },
+    "novelty_assessor": {
+      "quality": 6,
+      "clarity": 7,
+      "originality": 6,
+      "significance": 6,
+      "overall": 6,
+      "overall_label": "borderline_accept",
+      "confidence": 3,
+      "key_concern": "Routing mechanism is logistic regression + argmin (limited technical novelty); DIT features inherited not introduced; 3 topologies may be too narrow"
+    },
+    "clarity_reviewer": {
+      "quality": 6,
+      "clarity": 7,
+      "originality": 6,
+      "significance": 6,
+      "overall": 6,
+      "overall_label": "borderline_accept",
+      "confidence": 4,
+      "key_concern": "Placeholder figures; 5 contributions should be 3; self-assessment metadata leaks; no broader impact statement"
+    },
+    "domain_expert": {
+      "quality": 6,
+      "clarity": 7,
+      "originality": 7,
+      "significance": 7,
+      "overall": 7,
+      "overall_label": "accept",
+      "confidence": 5,
+      "key_concern": "No real-world deployment validation; DIT annotation scalability unaddressed; no latency analysis"
+    },
+    "ethics_reproducibility": {
+      "quality": 6,
+      "clarity": 7,
+      "originality": 6,
+      "significance": 6,
+      "overall": 5,
+      "overall_label": "borderline_reject",
+      "confidence": 4,
+      "key_concern": "Repository URL placeholder; DIT annotation process opaque; task provenance unclear; missing training details"
+    }
+  },
+  "aggregate": {
+    "quality": 5.8,
+    "clarity": 7.0,
+    "originality": 6.2,
+    "significance": 6.2,
+    "overall": 5.8,
+    "overall_recommendation": "borderline_reject",
+    "consensus": "split"
+  },
+  "threshold_met": false,
+  "threshold_details": {
+    "all_reviewers_above_6": false,
+    "two_at_7_plus_with_one_at_5": false,
+    "aggregate_quality_above_6": false,
+    "aggregate_clarity_above_6": true,
+    "no_fatal_flaw": true,
+    "notes": "2 reviewers at 5 (borderline reject), 2 at 6 (borderline accept), 1 at 7 (accept). Quality aggregate 5.8 < 6.0 threshold. No confirmed fatal flaw but train/test contamination risk is near-fatal."
+  },
+  "verdict": "BORDERLINE REJECT -- Revise and resubmit. Paper has genuine contribution (topology-level routing framing, DIT crossover insight, composability argument) but critical gaps in methodology (potential train-test contamination, simulated costs), reproducibility (placeholder repo, opaque DIT annotation), and presentation (missing figures, metadata leaks). Estimated 1-2 weeks of targeted revision to reach acceptance threshold.",
+  "remaining_fixes": [
+    {
+      "id": 1,
+      "priority": "critical",
+      "issue": "Train/test split for quality predictor",
+      "section": "method.md + results.md",
+      "detail": "Clarify evaluation protocol for logistic regression. If trained on all 84 tasks, implement k-fold CV and re-report.",
+      "flagged_by": ["methodology_skeptic", "ethics_reproducibility"]
+    },
+    {
+      "id": 2,
+      "priority": "critical",
+      "issue": "Anonymous repository with code and data",
+      "section": "abstract.md",
+      "detail": "Create anonymous repo with: 84 task descriptions + DIT annotations, 2016 run outputs, routing code, training code, reproduction scripts.",
+      "flagged_by": ["ethics_reproducibility"]
+    },
+    {
+      "id": 3,
+      "priority": "critical",
+      "issue": "DIT annotation protocol documentation",
+      "section": "experiments.md",
+      "detail": "Document: who annotated (authors/crowd/LLM), guidelines, inter-annotator agreement (kappa/alpha), validation process.",
+      "flagged_by": ["ethics_reproducibility", "domain_expert"]
+    },
+    {
+      "id": 4,
+      "priority": "critical",
+      "issue": "Generate all placeholder figures",
+      "section": "introduction.md, method.md, results.md",
+      "detail": "Replace [FIGURE] placeholders with actual visualizations: Fig 1 (system diagram), Fig 2 (cost by tier), Fig 3 (Pareto frontier).",
+      "flagged_by": ["clarity_reviewer"]
+    },
+    {
+      "id": 5,
+      "priority": "important",
+      "issue": "Cost model validation against real API billing",
+      "section": "method.md + discussion.md",
+      "detail": "Validate simulated costs vs actual API charges for a task subset, or conduct robustness analysis with +/-20% cost noise.",
+      "flagged_by": ["methodology_skeptic"]
+    },
+    {
+      "id": 6,
+      "priority": "important",
+      "issue": "Oracle routing comparison",
+      "section": "results.md",
+      "detail": "Add oracle routing row to Table 1 showing minimum cost at 100% accuracy across available topologies.",
+      "flagged_by": ["methodology_skeptic"]
+    },
+    {
+      "id": 7,
+      "priority": "important",
+      "issue": "Consolidate 5 contributions to 3",
+      "section": "introduction.md",
+      "detail": "Merge: (1) Topology Pareto routing + frontier analysis, (2) DIT routing + crossover insight, (3) Empirical evaluation.",
+      "flagged_by": ["clarity_reviewer"]
+    },
+    {
+      "id": 8,
+      "priority": "important",
+      "issue": "Real-world workload validation",
+      "section": "experiments.md + results.md",
+      "detail": "Add case study on 50-100 tasks from real agent deployment or public benchmark (GAIA, SWE-bench).",
+      "flagged_by": ["domain_expert"]
+    },
+    {
+      "id": 9,
+      "priority": "important",
+      "issue": "DIT extraction automation and error propagation",
+      "section": "method.md + experiments.md",
+      "detail": "Train DIT classifier, report extraction accuracy, measure downstream routing impact of estimation errors.",
+      "flagged_by": ["domain_expert"]
+    },
+    {
+      "id": 10,
+      "priority": "important",
+      "issue": "Strip self-assessment metadata from all sections",
+      "section": "related_work.md, experiments.md, method.md",
+      "detail": "Remove Self-Assessment, Known Weaknesses, and Revision Notes blocks before LaTeX compilation.",
+      "flagged_by": ["clarity_reviewer"]
+    },
+    {
+      "id": 11,
+      "priority": "important",
+      "issue": "Quality predictor training details",
+      "section": "method.md or experiments.md",
+      "detail": "Report: regularization type/strength, optimizer, convergence criteria, Brier score, ECE calibration.",
+      "flagged_by": ["ethics_reproducibility"]
+    },
+    {
+      "id": 12,
+      "priority": "important",
+      "issue": "Broader impact statement",
+      "section": "New section before references",
+      "detail": "Add NeurIPS-required broader impact: cost democratization, quality shortcut risks, environmental considerations.",
+      "flagged_by": ["clarity_reviewer", "ethics_reproducibility"]
+    },
+    {
+      "id": 13,
+      "priority": "minor",
+      "issue": "Latency analysis per topology",
+      "section": "results.md or experiments.md",
+      "detail": "Report wall-clock latency per topology per difficulty tier.",
+      "flagged_by": ["domain_expert"]
+    },
+    {
+      "id": 14,
+      "priority": "minor",
+      "issue": "Cost model stratified by task category",
+      "section": "method.md",
+      "detail": "Test overhead ratio independence from task type (coding vs summarization etc).",
+      "flagged_by": ["methodology_skeptic"]
+    },
+    {
+      "id": 15,
+      "priority": "minor",
+      "issue": "Sharpen DAAO distinction with concrete example",
+      "section": "related_work.md",
+      "detail": "Provide concrete task where operator-level and topology-level routing diverge.",
+      "flagged_by": ["novelty_assessor"]
+    },
+    {
+      "id": 16,
+      "priority": "minor",
+      "issue": "Increase to 5+ seeds",
+      "section": "experiments.md + results.md",
+      "detail": "Narrow CIs and strengthen marginal claims (e.g. 2.7pp gap between ParetOrch and DIT Accuracy-Only).",
+      "flagged_by": ["methodology_skeptic"]
+    },
+    {
+      "id": 17,
+      "priority": "minor",
+      "issue": "NeurIPS reproducibility checklist",
+      "section": "New appendix",
+      "detail": "Complete and include the NeurIPS reproducibility checklist.",
+      "flagged_by": ["ethics_reproducibility"]
+    }
+  ]
+}
