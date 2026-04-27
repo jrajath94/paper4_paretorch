@@ -1,0 +1,75 @@
+{
+  "venue": "jair",
+  "checked_at": "2026-03-18T03:29:42.479751+00:00",
+  "overall_ready": false,
+  "checks": [
+    {
+      "category": "compilation",
+      "item": "PDF compiles without errors",
+      "status": "fail",
+      "details": "paper.pdf not found; paper.tex not found"
+    },
+    {
+      "category": "format",
+      "item": "Page count within venue limit",
+      "status": "fail",
+      "details": "PDF not found: paper/output/paper.pdf"
+    },
+    {
+      "category": "anonymization",
+      "item": "No identifying information in paper",
+      "status": "fail",
+      "details": "1 violation(s) found"
+    },
+    {
+      "category": "citations",
+      "item": "All citations have bibliography entries",
+      "status": "fail",
+      "details": "24 cited but not in bib; 2 in bib but not cited"
+    },
+    {
+      "category": "content",
+      "item": "All figures present and referenced",
+      "status": "fail",
+      "details": "8 missing figure(s)"
+    },
+    {
+      "category": "content",
+      "item": "Abstract within 250-word limit",
+      "status": "fail",
+      "details": "paper.tex not found"
+    },
+    {
+      "category": "content",
+      "item": "All required sections present",
+      "status": "fail",
+      "details": "7 section(s) missing: introduction, related_work, methods, experiments, results, discussion, conclusion"
+    },
+    {
+      "category": "supplementary",
+      "item": "Reproducibility package complete",
+      "status": "fail",
+      "details": "Missing: pyproject.toml, Makefile, checksums.sha256, README.md"
+    }
+  ],
+  "summary": {
+    "total_checks": 8,
+    "passed": 0,
+    "failed": 8,
+    "skipped": 0
+  },
+  "blocking_issues": [
+    "Compilation: paper.pdf not found; paper.tex not found",
+    "Format: PDF not found: paper/output/paper.pdf",
+    "Anonymization: 1 violation(s)",
+    "  - [author_name] main.tex:38: \\author{Anonymous Author(s)}",
+    "Citations: Missing bib entries for: aggarwal2024automix, agrawal2013contextual_ts, c3po2025, chen2023frugalgpt, dang2025evolving",
+    "Figures: Missing: fig_failure_analysis, architecture_diagram, fig_main_results, fig_per_domain, fig_overhead_breakdown",
+    "Abstract: paper.tex not found",
+    "Sections: Missing: introduction, related_work, methods, experiments, results, discussion, conclusion"
+  ],
+  "recommendations": [
+    "Remove or cite unused bib entries: anonymous2026adaptswitch, anonymous2026paretorch",
+    "Generate reproducibility package: python3 paper/scripts/_repro_package.py"
+  ]
+}
