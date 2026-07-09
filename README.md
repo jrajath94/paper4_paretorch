@@ -8,7 +8,7 @@ _Cost-Quality Pareto Optimization for Multi-Agent Topology Selection_
 
 ---
 
-## 📋 Headline Numbers
+## Headline Numbers
 
 | Metric | Value |
 |---|---|
@@ -17,11 +17,11 @@ _Cost-Quality Pareto Optimization for Multi-Agent Topology Selection_
 | Routing decision threshold | Tunable τ for safety-critical applications |
 | Backbone | Claude Opus 4.6 with cost-quality Pareto frontier characterization |
 
-## 📄 Abstract (excerpt)
+## Abstract (excerpt)
 
 Multi-agent topology choices have wildly different cost profiles, yet practitioners typically pick the topology with the highest mean accuracy. ParetOrch routes per-task: cheap topologies handle the easy distribution, expensive ones earn their cost on hard tasks where the quality gap is large.
 
-## 🤖 Independent Review (Sakana AI Scientist v2)
+## Independent Review (Sakana AI Scientist v2)
 
 This paper has been reviewed by [Sakana AI Scientist v2](https://github.com/SakanaAI/AI-Scientist-v2)'s `perform_llm_review` module via the MiniMax-M2.7 backend. The review uses NeurIPS-style reviewer guidelines.
 
@@ -42,7 +42,7 @@ This paper has been reviewed by [Sakana AI Scientist v2](https://github.com/Saka
 
 > _Full review JSON: [`ai_scientist/reviews/minimax_review.json`](ai_scientist/reviews/minimax_review.json)._
 
-## 🔬 Reproducibility
+## Reproducibility
 
 ```bash
 # Clone
@@ -61,7 +61,7 @@ tectonic main.tex   # produces main.pdf
 ```
 
 
-## 📁 Repository Layout
+## Repository Layout
 
 ```
 paper4_paretorch/
@@ -80,7 +80,7 @@ paper4_paretorch/
 └── venues/                ← venue configs (NeurIPS / TMLR / JAIR formatting rules)
 ```
 
-## 🛠️ Tooling
+## Tooling
 
 This paper was developed with a custom multi-agent research pipeline using:
 - **Claude Opus 4.6 / Sonnet 4.6** (via [Claude Code](https://www.anthropic.com/claude-code)) — main author + reviewer agents
@@ -89,7 +89,7 @@ This paper was developed with a custom multi-agent research pipeline using:
 - **Tectonic** — LaTeX compilation
 - **Semantic Scholar / OpenAlex / CrossRef** APIs for citation verification
 
-## 📚 Part of the Multi-Agent Orchestration paper series
+## Part of the Multi-Agent Orchestration paper series
 
 | # | Repo | Title | Venue |
 |---|---|---|---|
@@ -99,11 +99,11 @@ This paper was developed with a custom multi-agent research pipeline using:
 | 4 | [`paper4_paretorch`](https://github.com/jrajath94/paper4_paretorch) | ParetOrch: Cost-Quality Pareto Optimization | NeurIPS 2026 |
 | 5 | [`paper5_adaptswitch`](https://github.com/jrajath94/paper5_adaptswitch) | AdaptSwitch: Runtime Topology Switching | JAIR |
 
-## 📜 License
+## License
 
 Code: MIT.  Paper text and figures: CC BY 4.0.
 
-## 🤝 Citation
+## Citation
 
 If you use this work, please cite (BibTeX entries to be finalized at submission):
 
