@@ -2,7 +2,7 @@
 
 _Cost-Quality Pareto Optimization for Multi-Agent Topology Selection_
 
-> A Pareto-optimal routing policy that jointly considers task success probability and API cost. Reduces multi-agent orchestration spending by **40-60%** versus always-best-topology while keeping ≥95% of peak success rate.
+> A Pareto-optimal routing policy that jointly considers task success probability and API cost. Reduces multi-agent orchestration spending by **35.5%** versus always-debate while keeping 96.2% of peak success rate.
 
 **Target venue:** [NeurIPS 2026](https://neurips.cc/Conferences/2026)  •  **Status:** Submission package compiled (PDF: 679 KB)
 
@@ -12,8 +12,8 @@ _Cost-Quality Pareto Optimization for Multi-Agent Topology Selection_
 
 | Metric | Value |
 |---|---|
-| Cost reduction | 40-60% vs. always-best-topology |
-| Quality preservation | ≥95% of peak success rate |
+| Cost reduction | 35.5% vs. always-debate |
+| Quality preservation | 96.2% of peak success rate |
 | Routing decision threshold | Tunable τ for safety-critical applications |
 | Backbone | Claude Opus 4.6 with cost-quality Pareto frontier characterization |
 
