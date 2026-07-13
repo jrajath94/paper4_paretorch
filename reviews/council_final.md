@@ -231,7 +231,7 @@ This paper addresses a real and growing pain point in the multi-agent LLM commun
 
 ### Weaknesses
 
-**W1 (Important). No real-world deployment validation.** The evaluation uses 84 synthetic tasks with DIT annotations. A domain expert wants to see this on real workloads: production coding assistant logs, customer service agent traces, or research workflow recordings. Synthetic tasks may not capture the distributional properties of real workloads (e.g., the 40-60% trivial-task claim in Section 6.1 is asserted without evidence from real systems).
+**W1 (Important). No real-world deployment validation.** The evaluation uses 84 synthetic tasks with DIT annotations. A domain expert wants to see this on real workloads: production coding assistant logs, customer service agent traces, or research workflow recordings. Synthetic tasks may not capture the distributional properties of real workloads (e.g., the 43% flat-routing finding is from this limited synthetic task set and may not generalize to real deployments).
 
 **Specific fix:** Add even a small real-world case study. Take 50-100 tasks from a real agent deployment, annotate them with DIT, and show that ParetOrch's routing decisions match what an expert would choose. Alternatively, use publicly available benchmarks like GAIA (already cited) or SWE-bench.
 

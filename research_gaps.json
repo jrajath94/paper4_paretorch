@@ -22,7 +22,7 @@
         "reason": "Task characterization (DIT) already validated in Paper 1; cost models derivable from token counts; Pareto optimization is well-understood"
       },
       "confidence": "HIGH",
-      "recommended_framing": "A Pareto-aware contextual bandit that uses DIT task features to select the cheapest multi-agent topology meeting a configurable quality threshold, reducing orchestration cost by 40-60% while retaining 95%+ of peak quality.",
+      "recommended_framing": "A Pareto-aware contextual bandit that uses DIT task features to select the cheapest multi-agent topology meeting a configurable quality threshold, reducing orchestration cost by 35.5% while retaining 92.1% of peak quality.",
       "key_references": ["chen2023frugalgpt", "ong2024routellm", "ding2024hybrid", "aggarwal2024automix", "du2023debate", "hong2023metagpt"]
     },
     {

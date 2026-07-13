@@ -99,7 +99,7 @@
       "word_count_target": 800,
       "citation_density": "5-8",
       "figure_slots": 0,
-      "argumentation_notes": "Three implications: (1) Most tasks are easy — flat topology is Pareto-optimal for 40-60% of typical workloads; (2) The crossover at DIT ~0.35 gives practitioners a simple rule of thumb; (3) Cost-quality is not zero-sum — the Pareto frontier shows practitioners can navigate the tradeoff smoothly. Limitations: simulated costs (not real API billing), DIT features require task analysis, three topologies only. Future: learned cost models, online adaptation, more topologies.",
+      "argumentation_notes": "Three implications: (1) Most tasks are easy — flat topology is Pareto-optimal for 43% of typical workloads; (2) The crossover at DIT ~0.35 gives practitioners a simple rule of thumb; (3) Cost-quality is not zero-sum — the Pareto frontier shows practitioners can navigate the tradeoff smoothly. Limitations: simulated costs (not real API billing), DIT features require task analysis, three topologies only. Future: learned cost models, online adaptation, more topologies.",
       "narrative_role": "implication",
       "key_terminology": ["practical implications", "crossover point", "cost-quality tradeoff"],
       "subsections": [

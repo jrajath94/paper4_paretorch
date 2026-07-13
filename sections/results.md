@@ -19,9 +19,9 @@ Table 1 summarizes cost and quality across all routing policies on 84 tasks, ave
 | Random | 2.863 $\pm$ 0.02 | 75.4% $\pm$ 1.4 | \$0.045 $\pm$ 0.002 | 90.5% | 35.3% |
 | DIT Accuracy-Only | 4.382 $\pm$ 0.01 | 83.3% $\pm$ 0.7 | \$0.063 $\pm$ 0.001 | 100.0% | 1.1% |
 | Always-Debate | 4.429 $\pm$ 0.01 | 83.3% $\pm$ 2.0 | \$0.063 $\pm$ 0.003 | 100.0% | 0.0% |
-| **ParetOrch** | **2.857 $\pm$ 0.01** | **80.1% $\pm$ 2.1** | **\$0.042 $\pm$ 0.002** | **96.2%** | **35.5%** |
+| **ParetOrch** | **2.857 $\pm$ 0.01** | **80.1% $\pm$ 2.1** | **\$0.042 $\pm$ 0.002** | **92.1%** | **35.5%** |
 
-ParetOrch achieves the best cost-efficiency tradeoff. It reduces cost by 35.5\% versus always-debate while retaining 96.2\% of peak accuracy. The cost per correct answer drops from \$0.063 to \$0.042---a 33.0\% reduction.
+ParetOrch achieves the best cost-efficiency tradeoff. It reduces cost by 35.5\% versus always-debate while retaining 92.1\% of peak accuracy. The cost per correct answer drops from \$0.063 to \$0.042---a 33.0\% reduction.
 
 The DIT accuracy-only router, which ignores cost, spends 53\% more than ParetOrch (\$4.382 vs. \$2.857) for only 3.2pp more accuracy. This confirms that cost-agnostic routing is not cost-efficient: optimizing accuracy alone pushes most tasks to expensive topologies.
 
@@ -82,7 +82,7 @@ We resample from the 84-task corpus to create 1,000-task synthetic workloads und
 
 | Distribution | Cost Reduction | Quality Retention | Ann. Savings (10K/day) |
 |-------------|---------------|-------------------|----------------------|
-| Uniform (evaluation) | 35.5% $\pm$ 1.6 | 96.2% $\pm$ 2.3 | \$68K |
+| Uniform (evaluation) | 35.5% $\pm$ 1.6 | 92.1% $\pm$ 2.3 | \$68K |
 | Production-skewed (60/30/10) | 40.7% $\pm$ 1.8 | 97.1% $\pm$ 1.4 | \$57K |
 | Research-heavy (20/30/50) | 25.7% $\pm$ 2.1 | 92.4% $\pm$ 3.1 | \$36K |
 | Bimodal (45/10/45) | 33.1% $\pm$ 2.4 | 94.2% $\pm$ 2.8 | \$46K |

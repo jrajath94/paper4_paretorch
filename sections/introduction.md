@@ -21,7 +21,7 @@ The design rests on one empirical regularity: below DIT magnitude 0.35, flat top
 
 We evaluate ParetOrch on 84 tasks spanning four difficulty tiers, three topologies (flat, hierarchical, debate), and three random seeds, yielding 756 topology runs with 95\% bootstrap confidence intervals on all primary claims. The results:
 
-1. \textbf{35.5\% cost reduction at 96.2\% quality retention.} ParetOrch cuts token cost by 35.5\% relative to always-debate while retaining 96.2\% of peak accuracy. For a deployment processing 10,000 tasks daily, this translates to estimated savings of \$68,000 annually. \emph{Falsifiable:} any replication with $>$100 tasks at comparable DIT coverage should observe $>$25\% cost reduction at $>$90\% quality retention.
+1. \textbf{35.5\% cost reduction at 92.1\% quality retention.} ParetOrch cuts token cost by 35.5\% relative to always-debate while retaining 92.1\% of peak accuracy. For a deployment processing 10,000 tasks daily, this translates to estimated savings of \$68,000 annually. \emph{Falsifiable:} any replication with $>$100 tasks at comparable DIT coverage should observe $>$25\% cost reduction at $>$90\% quality retention.
 
 2. \textbf{A topology cost algebra with $R^2 = 0.89$.} Multiplicative overhead multipliers ($\alpha_{\text{flat}} = 1.0$, $\alpha_{\text{hier}} = 2.3$, $\alpha_{\text{debate}} = 3.5$) predict actual token costs with no statistically significant interaction between difficulty tier and overhead ratio (Kruskal-Wallis $p = 0.34$). \emph{Falsifiable:} the cost ratios should replicate within $\pm 0.15$ on any topology implementation sharing the same agent count and round count.
 
